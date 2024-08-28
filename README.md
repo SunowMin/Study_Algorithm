@@ -1,4 +1,4 @@
-# Study_Algorithm
+# 💡 Study_Algorithm
 
 ### 사용된 언어 및 도구
 - **언어** : C++
