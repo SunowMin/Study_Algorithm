@@ -5,7 +5,7 @@ int main(void)
 {
 
     int n; // 수열에 저장될 수의 개수
-    int a[10000], x, i;
+    int a[9999], x, i;
 
     cin >> n >> x;
 
