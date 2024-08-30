@@ -14,13 +14,9 @@ int main(void)
     current_time += cooking_time;
 
     // 분 단위에서 시,분 단위로 변환해주기
-    end_hour = current_time / 60;
+    end_hour = (current_time / 60) % 24;
     end_minute = current_time % 60;
 
-    if (end_hour >= 24) {
-        end_hour -= 24;
-    }
- 
     cout << end_hour << " " << end_minute;
 
     return 0;
