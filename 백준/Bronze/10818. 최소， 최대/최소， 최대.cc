@@ -3,38 +3,22 @@ using namespace std;
 
 int main()
 {
-	int n = 0;
+	int n, min = 1000000, max = -1000000, input;
 	cin >> n;
 
-	int iMin = 1000000;
-	int iMax = -1000000;
-	
-	int* iArr = new int[n];
+	int arr[100000];
 
-	for(int i = 0; i < n ; ++i)
-	{
-		cin >> iArr[i];
-
-		if(iArr[i] < iMin )
-		{
-			iMin= iArr[i];
+	for (int i = 0; i < n; i++) {
+		cin >> input;
+		if (input < min) {
+			min = input;
 		}
-		
-		if (iArr[i] > iMax)
-		{
-			iMax= iArr[i];
-		}		
+		if (input > max) {
+			max = input;
+		}
 	}
 
-	cout << iMin << " " << iMax << endl;
-	
-	if(iArr)
-	{
-		delete(iArr);
-		iArr = nullptr;
-	}
-
-
+	cout << min << " " << max;
 
 	return 0;
 }
