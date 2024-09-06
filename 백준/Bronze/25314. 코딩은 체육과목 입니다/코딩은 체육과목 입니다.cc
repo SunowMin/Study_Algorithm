@@ -5,8 +5,8 @@ int main()
 {
 	int n;
 	cin >> n;
-	int value = n / 4;
-	for (int i = 0; i < value; i++) {
+
+	for (int i = 0; i < n/4; i++) {
 		cout << "long ";
 	}
 	cout << "int";
