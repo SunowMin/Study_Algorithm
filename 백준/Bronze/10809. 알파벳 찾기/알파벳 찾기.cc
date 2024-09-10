@@ -1,19 +1,15 @@
 #include <iostream>
 #include <string>
-
 using namespace std;
 
+int main()
+{
+	string input;
 
-int main() {
+	cin >> input;
 
-	int cnt[26] = { 0 , };
-
-	string s;
-
-	cin >> s;
-
-	for (char i = 'a'; i <= 'z'; i++) {
-		cout << (int)s.find(i) << ' ';
+	for (int i = 'a'; i <= 'z'; i++) {
+		cout << (int)input.find(i) << ' ';
 	}
 
 
