@@ -1,5 +1,4 @@
 #include <iostream>
-#include <string>
 using namespace std;
 
 int main()
@@ -10,6 +9,7 @@ int main()
 	cout << "   `~\\/" << "\n";
 	cout << "      |" << "\n";
 	cout << "      |";
+	 
 
 	return 0;
 }
