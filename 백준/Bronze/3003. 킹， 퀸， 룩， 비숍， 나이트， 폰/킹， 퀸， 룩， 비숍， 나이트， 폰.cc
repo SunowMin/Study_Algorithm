@@ -8,14 +8,7 @@ int main()
 	for (int i = 0; i < 6; i++) {
 		cin >> input;
 
-		if (input == arr[i]) {
-			cout << "0";
-		}
-		else {
-			cout << arr[i] - input;
-		}
-		cout << " ";
-
+		cout << arr[i] - input << " ";
 	}
 
 	return 0;
