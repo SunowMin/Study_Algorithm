@@ -1,40 +1,27 @@
 #include <iostream>
+#include <string>
 using namespace std;
-
-int main()
-{
-	string word;
-	int cro = 0, alpha = 0;
-
-	cin >> word;
-
-	for (int i = 0; i < word.length() - 1; i++) {
-		if (word[i] == 'c' && word[i + 1] == '=' || word[i + 1] == '-') {
-			cro++;
-		}
-		else if (word[i] == 'd' && word[i + 1] == 'z' && word[i + 2] == '=') {
-			cro++;
-		}
-		else if (word[i] == 'd' && word[i + 1] == '-') {
-			cro++;
-		}
-		else if (word[i] == 'l' && word[i + 1] == 'j') {
-			cro++;
-		}
-		else if (word[i] == 'n' && word[i + 1] == 'j') {
-			cro++;
-		}
-		else if (word[i] == 's' && word[i + 1] == '=') {
-			cro++;
-		}
-		else if (word[i] == 'z' && word[i + 1] == '=') {
-			cro++;
-		}
-		else alpha++;
-	}
-
-
-	cout << alpha+1;
-
-	return 0;
+ 
+int count(string str);
+int main(){
+    ios_base::sync_with_stdio(false);	// 두 표준 입출력 동기화 해제
+    cin.tie(NULL);	// 입력과 출력 묶음을 풀기
+ 
+    string s;
+    cin >> s;    
+    cout << count(s);
+    return 0;
+}
+ 
+int count(string str){
+    string alphabet[8] = {"c=", "c-", "dz=", "d-", "lj", "nj", "s=", "z="};
+ 
+    for(int i=0; i<8; i++){
+        while(1){
+            if(str.find(alphabet[i]) != -1){
+                str.replace(str.find(alphabet[i]), alphabet[i].length(), "#");
+            }else break;
+        }
+    }
+    return str.length();
 }
