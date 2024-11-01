@@ -1,50 +1,43 @@
 #include <iostream>
 #include <string>
-
+#include <stdlib.h>
 using namespace std;
 
-int main(){
+int main(void) {
+    int n;
 
-    string s;
-    int t;
-    cin >> t;
-    getchar();
+    cin >> n;
+    cin.ignore();
 
-    for(int i=0; i<t; i++){
+    for (int i = 0; i < n; i++) {
+        string alpha;
+        getline(cin, alpha);
+        int vowels = 0, cons = 0;
 
-        getline(cin,s);
-        int count_i =0 , count_j = 0;
+        for (char al : alpha) {
+            if (al == ' ')
+                continue;
 
-        for (int j=0;j<s.size();j++){
-
-            switch (s[j]) {
-
-                case 'a':
-                case 'e':
-                case 'i':
-                case 'o':
-                case 'u':
-                case 'A':
-                case 'E':
-                case 'I':
-                case 'O':
-                case 'U':
-                    count_i ++;
-                    break;
-                case ' ':
-                    break;
-                default:
-                    count_j ++;
-                    break;
-
+            switch (al) {
+            case 'A':
+            case 'E':
+            case 'I':
+            case 'O':
+            case 'U':
+            case 'a':
+            case 'e':
+            case 'i':
+            case 'o':
+            case 'u':
+                vowels++;
+                break;
+            default:
+                if(isalpha(al)) cons++;
+                break;
             }
-
-
         }
-
-        cout << count_j << " " << count_i << endl;
-
+        cout << cons << " " << vowels << "\n";
     }
 
-
-}
+    return 0;
+} 
