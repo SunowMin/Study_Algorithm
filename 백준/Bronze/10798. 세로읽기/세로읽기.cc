@@ -2,29 +2,19 @@
 
 using namespace std;
 
-int main(void) {
+char arr[5][15];
 
-    char array[5][15] = { '\0' };;
+int main() {
 
-    // 다섯 줄 입력받기
-    for (int i = 0; i < 5; i++) {
-        string input;
-        cin >> input;
+	for (int i = 0; i < 5; i++)
+		cin >> arr[i];
 
-        // 입력된 문자열을 배열에 복사
-        for (int j = 0; j < input.length(); j++) {
-            array[i][j] = input[j];
-        }
-    }
+	for (int i = 0; i < 15; i++) {
+		for (int k = 0; k < 5; k++) {
+			if(arr[k][i] != NULL)
+				cout << arr[k][i];
+		}
+	}
 
-    // 출력하기
-    for (int i = 0; i < 15; i++) {
-        for (int j = 0; j < 5; j++) {
-            if (array[j][i] != NULL) {
-                cout << array[j][i];
-            }
-        }
-    }
-
-    return 0;
+	return 0;
 }
