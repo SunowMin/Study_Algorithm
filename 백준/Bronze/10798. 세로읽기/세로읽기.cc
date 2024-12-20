@@ -1,33 +1,30 @@
 #include <iostream>
-#include <string>
+
 using namespace std;
 
-int main() {
-    char board[5][15] = { 0 }; // 2차원 배열로 칠판 단어 저장
+int main(void) {
 
-    // 다섯 줄의 입력 받기
+    char array[5][15] = { '\0' };;
+
+    // 다섯 줄 입력받기
     for (int i = 0; i < 5; i++) {
         string input;
         cin >> input;
+
+        // 입력된 문자열을 배열에 복사
         for (int j = 0; j < input.length(); j++) {
-            board[i][j] = input[j];
+            array[i][j] = input[j];
         }
     }
 
-    string result; // 세로로 읽은 결과를 저장할 문자열
-
-    // 최대 15번 반복 (최대 글자수)
-    for (int col = 0; col < 15; col++) {
-        for (int row = 0; row < 5; row++) {
-            // 현재 위치에 글자가 존재하면 추가
-            if (board[row][col] != 0) {
-                result += board[row][col];
+    // 출력하기
+    for (int i = 0; i < 15; i++) {
+        for (int j = 0; j < 5; j++) {
+            if (array[j][i] != NULL) {
+                cout << array[j][i];
             }
         }
     }
-
-    // 결과 출력
-    cout << result << endl;
 
     return 0;
 }
