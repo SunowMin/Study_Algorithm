@@ -12,16 +12,10 @@ int main(void) {
         cin >> x >> y;
         for (int j = x; j < x + 10; j++) {
             for (int k = y; k < y + 10; k++) {
-                array[j][k] = 1;
-            }
-        }
-    }
-
-    // 1의 개수 출력
-    for (int i = 0; i < 100; i++) {
-        for (int j = 0; j < 100; j++) {
-            if (array[i][j] == 1) {
-                sum += 1;
+                if (array[j][k] == 0) {
+                    sum++;
+                    array[j][k] = 1;
+                }
             }
         }
     }
@@ -29,3 +23,5 @@ int main(void) {
 
     return 0;
 }
+
+
